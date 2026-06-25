@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Unser Schulgebäude in 3D &amp; AR</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+  <style>
+    :root { --akzent:#0a5dc2; --bg:#f4f6f9; --text:#1a2230; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      background:var(--bg); color:var(--text);
+      min-height:100dvh; display:flex; flex-direction:column; align-items:center;
+    }
+    header { text-align:center; padding:22px 18px 6px; }
+    header h1 { margin:0; font-size:1.45rem; letter-spacing:.2px; }
+    header p { margin:6px 0 0; opacity:.7; font-size:.95rem; }
+    model-viewer {
+      width:100%; max-width:820px; height:62vh; min-height:340px;
+      background:linear-gradient(#ffffff,#e7ecf3);
+      border-radius:16px; margin:14px;
+    }
+    .ar-btn {
+      position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+      background:var(--akzent); color:#fff; border:none; cursor:pointer;
+      padding:14px 26px; border-radius:999px; font-size:1.05rem; font-weight:600;
+      box-shadow:0 6px 18px rgba(10,93,194,.35); display:flex; gap:9px; align-items:center;
+    }
+    .ar-btn svg { width:20px; height:20px; }
+    .hint { max-width:560px; text-align:center; padding:4px 22px 26px; opacity:.8; font-size:.92rem; line-height:1.5; }
+    .hint b { color:var(--akzent); }
+    footer { opacity:.45; font-size:.78rem; padding-bottom:18px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unser Schulgebäude in 3D</h1>
+    <p>Drehen &amp; zoomen — oder direkt in dein Zimmer holen</p>
+  </header>
+
+  <model-viewer
+    src="models/schulmodell.glb"
+    ios-src="models/schulmodell.usdz"
+    alt="3D-Modell unseres Schulgebäudes"
+    ar ar-modes="webxr scene-viewer quick-look"
+    camera-controls auto-rotate auto-rotate-delay="2500"
+    shadow-intensity="1" exposure="1.05"
+    camera-orbit="35deg 70deg auto"
+    touch-action="pan-y">
+    <button slot="ar-button" class="ar-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/>
+      </svg>
+      In AR ansehen
+    </button>
+  </model-viewer>
+
+  <p class="hint">
+    Tippe auf <b>„In AR ansehen“</b> und richte die Kamera auf einen Tisch oder den Boden —
+    das Modell erscheint in <b>echter Größe</b> vor dir. Funktioniert auf iPhone und den meisten
+    Android-Handys <b>ohne App</b>.
+  </p>
+
+  <footer>Abiturientenball · 3D-Druck-Modell unserer Schule</footer>
+</body>
+</html>
