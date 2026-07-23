@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f4ee" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta
+      name="description"
+      content="Ein persönlicher Countdown für L bis zum 9. August 2026."
+    />
+    <title>L &amp; T · Countdown</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main id="countdown-view" class="countdown-page">
+      <div class="paper-grain" aria-hidden="true"></div>
+      <div class="botanical botanical-left" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="botanical botanical-right" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <section class="hero-shell" aria-labelledby="countdown-title">
+        <header class="topline">
+          <div class="monogram" aria-label="L und T">
+            <span>L</span><i aria-hidden="true"></i><span>T</span>
+          </div>
+          <p>Bis zum 9. August 2026</p>
+          <span id="edition" class="edition">Tag 1 / 18</span>
+        </header>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Ein kleiner Countdown für L</p>
+          <h1 id="countdown-title">Noch 17 Tage</h1>
+          <p class="intro">
+            Jeden Tag zeigt diese Seite ein kleines bisschen mehr von dem,
+            worauf wir uns freuen können.
+          </p>
+        </div>
+
+        <div class="live-countdown" aria-label="Verbleibende Zeit">
+          <div><strong id="days">17</strong><span>Tage</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="hours">00</strong><span>Stunden</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="minutes">00</strong><span>Minuten</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="seconds">00</strong><span>Sekunden</span></div>
+        </div>
+
+        <div class="daily-area">
+          <button
+            id="note-button"
+            class="letter-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="daily-note"
+          >
+            <span class="envelope-mark" aria-hidden="true"><i></i></span>
+            <span id="note-button-label">Heutige Notiz öffnen</span>
+            <em id="note-button-symbol" aria-hidden="true">+</em>
+          </button>
+          <div class="daily-note" id="daily-note">
+            <p id="daily-note-text"></p>
+            <span>— T</span>
+          </div>
+        </div>
+
+        <div
+          id="progress-block"
+          class="progress-block"
+          aria-label="Fortschritt des Countdowns"
+        >
+          <div class="progress-labels">
+            <span>23. Juli</span>
+            <span id="progress-end">9. August</span>
+          </div>
+          <div class="progress-track">
+            <i></i>
+            <span id="progress-dot"></span>
+          </div>
+        </div>
+
+        <div id="planner-locked" class="planner-teaser">
+          <span class="lock-mark" aria-hidden="true"></span>
+          <div>
+            <p>Unser Date-Planer</p>
+            <span>Öffnet am 2. August – sieben Tage vorher.</span>
+          </div>
+        </div>
+
+        <div id="planner-missing-link" class="planner-teaser hidden">
+          <span class="lock-mark" aria-hidden="true"></span>
+          <div>
+            <p>Persönlicher Date-Planer</p>
+            <span>Dieser Bereich ist nur über Ls persönlichen Link erreichbar.</span>
+          </div>
+        </div>
+
+        <section
+          id="planner-card"
+          class="planner-card hidden"
+          aria-labelledby="planner-title"
+        >
+          <div class="planner-heading">
+            <p class="section-kicker">Jetzt bist du dran</p>
+            <h2 id="planner-title">Worauf hast du Lust?</h2>
+            <p>Wähle die Richtung für unser Essen und deinen Wunschtermin.</p>
+          </div>
+
+          <form id="date-form">
+            <fieldset>
+              <legend>Essensrichtung</legend>
+              <div class="food-grid">
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="italian" required />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Italienisch</strong><small>Pasta, Pizza &amp; Dolce</small></span>
+                </label>
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="asian" />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Asiatisch</strong><small>Sushi, Bowls &amp; mehr</small></span>
+                </label>
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="mediterranean" />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Mediterran</strong><small>Leicht und sommerlich</small></span>
+                </label>
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="modern-european" />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Modern europäisch</strong><small>Klassisch, aber besonders</small></span>
+                </label>
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="comfort-food" />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Gemütlich &amp; unkompliziert</strong><small>Einfach richtig gutes Essen</small></span>
+                </label>
+                <label class="food-option">
+                  <input type="radio" name="foodDirection" value="surprise" />
+                  <span class="radio-dot" aria-hidden="true"></span>
+                  <span><strong>Überrasch mich</strong><small>T übernimmt die Auswahl</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="date-time-grid">
+              <label>
+                <span>Datum</span>
+                <input
+                  id="preferred-date"
+                  type="date"
+                  min="2026-08-09"
+                  max="2026-08-23"
+                  value="2026-08-09"
+                  required
+                />
+              </label>
+              <label>
+                <span>Uhrzeit</span>
+                <input id="preferred-time" type="time" value="18:30" required />
+              </label>
+            </div>
+
+            <p id="form-error" class="form-error hidden" role="alert"></p>
+            <button id="submit-button" class="primary-button" type="submit">
+              <span class="button-copy">Meine Auswahl an T senden</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="privacy-note">
+              Deine Auswahl wird geschützt hinterlegt und ist nur für T sichtbar.
+            </p>
+          </form>
+        </section>
+
+        <section
+          id="planner-success"
+          class="planner-card planner-success hidden"
+          aria-live="polite"
+        >
+          <span class="success-seal" aria-hidden="true">L</span>
+          <p class="section-kicker">Auswahl gespeichert</p>
+          <h2>Danke, den Rest übernimmt T.</h2>
+          <p>
+            Deine Angaben sind nicht öffentlich sichtbar. Du kannst sie bei
+            Bedarf noch einmal ändern.
+          </p>
+          <button id="change-choice" type="button" class="secondary-button">
+            Auswahl ändern
+          </button>
+        </section>
+
+        <footer><span>L</span><i></i><span>T</span></footer>
+      </section>
+    </main>
+
+    <main id="owner-view" class="private-page hidden">
+      <section class="private-shell">
+        <header class="private-header">
+          <a id="back-to-countdown" href="./index.html" aria-label="Zurück zum Countdown">
+            L <i></i> T
+          </a>
+          <span>Nur für T</span>
+        </header>
+
+        <div class="private-intro">
+          <p class="section-kicker">Private Ansicht</p>
+          <h1>Ls Auswahl</h1>
+          <p>Hier erscheint, wofür L sich entschieden hat.</p>
+        </div>
+
+        <form id="owner-access" class="access-card hidden">
+          <label for="owner-key">Privater Zugangscode</label>
+          <div>
+            <input id="owner-key" type="password" autocomplete="off" required />
+            <button type="submit">Öffnen</button>
+          </div>
+          <p id="owner-error" class="hidden" role="alert"></p>
+        </form>
+
+        <div id="choice-loading" class="choice-card loading-card hidden" aria-live="polite">
+          Auswahl wird geladen …
+        </div>
+
+        <div id="choice-empty" class="choice-card empty-card hidden">
+          <span aria-hidden="true">—</span>
+          <h2>Noch keine Auswahl</h2>
+          <p>Sobald L den Date-Planer ausgefüllt hat, findest du alles hier.</p>
+        </div>
+
+        <article id="choice-card" class="choice-card hidden">
+          <div class="choice-number">01</div>
+          <div class="choice-row">
+            <span>Essensrichtung</span>
+            <strong id="choice-food"></strong>
+          </div>
+          <div class="choice-row">
+            <span>Wunschtermin</span>
+            <strong id="choice-date"></strong>
+          </div>
+          <div class="choice-row">
+            <span>Uhrzeit</span>
+            <strong id="choice-time"></strong>
+          </div>
+          <footer id="choice-updated"></footer>
+        </article>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="noscript">Bitte aktiviere JavaScript, damit der Countdown funktioniert.</p>
+    </noscript>
+  </body>
+</html>
