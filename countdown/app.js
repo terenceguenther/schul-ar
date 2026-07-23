@@ -44,11 +44,15 @@
     sessionStorage.setItem("lt-countdown-owner", ownerFromLink);
   }
   if (inviteFromLink) {
+    sessionStorage.removeItem("lt-countdown-owner");
     sessionStorage.setItem("lt-countdown-invite", inviteFromLink);
   }
 
   const ownerKey =
-    ownerFromLink || sessionStorage.getItem("lt-countdown-owner") || "";
+    ownerFromLink ||
+    (!inviteFromLink
+      ? sessionStorage.getItem("lt-countdown-owner") || ""
+      : "");
   const inviteKey =
     inviteFromLink || sessionStorage.getItem("lt-countdown-invite") || "";
 
