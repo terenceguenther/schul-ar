@@ -245,7 +245,7 @@
         error.classList.remove("hidden");
       } finally {
         submit.disabled = false;
-        buttonCopy.textContent = "Meine Auswahl an T senden";
+        buttonCopy.textContent = "Meine Auswahl senden";
       }
     });
 
